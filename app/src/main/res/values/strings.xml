@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">project6</string>
+    <string-array name="repeat">
+        <item>Once</item>
+        <item>Daily</item>
+        <item>Mon to Fri</item>
+    </string-array>
+
+</resources>

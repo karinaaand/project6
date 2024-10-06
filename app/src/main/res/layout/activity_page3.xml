@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page3">
+
+    <!-- TextView untuk menampilkan judul
+    "SimpliRemind" di bagian atas halaman -->
+    <TextView
+        android:id="@+id/txt_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SimpliRemind"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Garis horizontal sebagai pembatas
+    di bawah judul -->
+    <View
+        android:id="@+id/horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/txt_info"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- LinearLayout untuk menampilkan
+    detail reminder (judul, tanggal, waktu,
+    pengulangan) -->
+    <LinearLayout
+        android:id="@+id/reminder"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="@drawable/putih"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_add_task"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_line">
+
+        <!-- TextView untuk menampilkan
+        judul reminder -->
+        <TextView
+            android:id="@+id/txt_info2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text=""
+            android:textStyle="bold" />
+
+        <!-- TextView untuk menampilkan
+        tanggal reminder dengan icon kalender -->
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/kalender"
+            android:textSize="20sp"
+            android:drawablePadding="8dp"
+            android:text="" />
+
+        <!-- TextView untuk menampilkan
+        waktu reminder dengan icon waktu -->
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/waktu"
+            android:textSize="20sp"
+            android:drawablePadding="8dp"
+            android:text="" />
+
+        <!-- TextView untuk menampilkan
+        informasi pengulangan reminder
+        dengan icon repeat -->
+        <TextView
+            android:id="@+id/repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/repeat"
+            android:drawablePadding="8dp"
+            android:text="" />
+    </LinearLayout>
+
+    <!-- Tombol untuk menambahkan
+    tugas (Add Task) di bagian bawah halaman -->
+    <Button
+        android:id="@+id/btn_add_task"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Add Task"
+        android:backgroundTint="@color/blue"
+        app:layout_constraintTop_toBottomOf="@id/reminder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

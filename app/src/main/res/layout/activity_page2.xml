@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page2"
+    android:background="@color/white">
+
+    <!-- Title TextView (SimpliRemind) -->
+    <!-- Ini adalah elemen TextView yang
+    menampilkan judul aplikasi "SimpliRemind"
+    di bagian atas layar,
+    dengan ukuran font 24sp, bold, dan berwarna
+    dark grey. Penempatan elemen ini berada
+    di tengah horizontal (Start dan End
+         ke parent) dan berada 24dp dari
+         atas layar. -->
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SimpliRemind"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- CardView for Reminder Form -->
+    <!-- Elemen CardView ini berfungsi sebagai
+    container untuk form input reminder.
+         Menggunakan margin atas sebesar
+         32dp dan radius sudut 16dp untuk
+         tampilan melengkung serta bayangan
+         (elevation) 8dp. -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_title">
+
+        <LinearLayout
+            android:layout_margin="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Header Text
+            (Make your own reminder) -->
+            <!-- Elemen TextView ini menampilkan
+            header di dalam CardView dengan teks
+            "Make your own Reminder."
+                 Elemen ini diatur dengan background
+                 warna biru dan teks putih.
+                 Penempatannya di tengah
+                 (alignment center). -->
+            <TextView
+                android:id="@+id/card_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/biru"
+                android:text="Make your own Reminder."
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:padding="12dp" />
+
+            <!-- Title Input -->
+            <!-- Ini adalah elemen TextView yang
+            menunjukkan label "Title" untuk input
+            judul tugas di form,
+                 diikuti dengan EditText untuk
+                 memasukkan judul. -->
+            <TextView
+                android:id="@+id/txt_field_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="16sp"
+                android:textColor="@color/dark_grey"
+                android:layout_marginTop="20dp" />
+
+            <EditText
+                android:id="@+id/field_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Insert Title"
+                android:padding="14dp"
+                android:textColor="@color/black"/>
+
+            <!-- Repeat Option -->
+            <!-- Menambahkan label untuk pengaturan
+            opsi pengulangan reminder, dan spinner
+            yang memungkinkan
+                 pengguna memilih frekuensi
+                 pengulangan. -->
+            <TextView
+                android:id="@+id/txt_field_repeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repeat"
+                android:textSize="16sp"
+                android:textColor="@color/dark_grey"
+                android:layout_marginTop="16dp" />
+
+            <!-- Date Picker -->
+            <!-- Spinner di bawah label Repeat
+            yang memungkinkan pengguna memilih
+            opsi pengulangan reminder. -->
+            <Spinner
+                android:id="@+id/spinner_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="14dp"
+                android:spinnerMode="dropdown" />
+
+            <!-- Date Picker -->
+            <!-- Menambahkan label dan tombol
+            untuk membuka date picker, sehingga
+            pengguna bisa memilih tanggal reminder. -->
+            <TextView
+                android:id="@+id/txt_field_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="16sp"
+                android:textColor="@color/dark_grey"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/btn_date_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Date"
+                android:drawableLeft="@drawable/kalender"
+                android:drawablePadding="8dp"
+                android:padding="14dp"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:onClick="showCalendar" />
+
+            <!-- Time Picker -->
+            <!-- Elemen TextView ini menampilkan
+            label untuk memilih waktu, dan tombol
+            TextView di bawahnya
+                 yang menunjukkan waktu yang
+                 dipilih oleh pengguna. -->
+            <TextView
+                android:id="@+id/txt_field_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textSize="16sp"
+                android:textColor="@color/dark_grey"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/field_time_picker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="00:00:00"
+                android:padding="14dp"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:onClick="showTimepicker" />
+
+            <!-- Add Task Button -->
+            <!-- Tombol yang berfungsi untuk
+            menambahkan reminder baru dengan
+            warna latar biru dan teks berwarna putih. -->
+            <Button
+                android:id="@+id/btn_add_task"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Task"
+                android:backgroundTint="@color/blue"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:onClick="showAlert" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
